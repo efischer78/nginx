@@ -5,7 +5,7 @@ owner "nginx" systemPassword("tomcat")
 worker_processes 1
 
 http {
-    port 80 exposed("NGINX_HTTP_PORT")
+    port 80 exposed("NGINX_HTTP_PORT") exported()
     proxy ""
 }
 
