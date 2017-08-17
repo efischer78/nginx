@@ -1,7 +1,7 @@
 
 nginxHome "/logiciels/nginx"
 
-owner "nginx" systemPassword("tomcat")
+owner "nginx" systemPassword("nginx")
 worker_processes 1
 
 http {
