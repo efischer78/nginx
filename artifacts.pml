@@ -1,10 +1,8 @@
 packages {
-	update true
 	names "build-essential zlib1g-dev libpcre3-dev libssl-dev libxslt1-dev libxml2-dev libgd2-xpm-dev libgeoip-dev libgoogle-perftools-dev libperl-dev"
 	os "ubuntu"
 }
 packages {
-	update true
 	names "gcc-c++ pcre-devel zlib-devel make wget openssl-devel libxml2-devel libxslt-devel gd-devel perl-ExtUtils-Embed GeoIP-devel gperftools-devel"
 	os "centos"
 }
