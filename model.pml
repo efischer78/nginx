@@ -1,12 +1,12 @@
 owner "nginx" user()
 nginxHome "/usr/local/nginx"
 
-logDir "/var/log/nginx" directory(owner: "{{ product.owner }}", persistent: "NGINX_LOG_DIR", command: "deploy")
+logDir "/var/log/nginx" directory(owner: "${ product.owner }", persistent: "NGINX_LOG_DIR", command: "deploy")
 
 sbinPath "/usr/local/sbin/nginx"
 confPath "/etc/nginx/nginx.conf"
-errorLogPath "{{ product.logDir }}/error.log"
-httpLogPath "{{ product.logDir }}/access.log"
+errorLogPath "${ product.logDir }/error.log"
+httpLogPath "${ product.logDir }/access.log"
 pidPath "/run/nginx.pid"
 lockPath "/run/lock/subsys/nginx"
 
@@ -16,8 +16,8 @@ http {
     proxy ""
 }
 
-startCommand "{{ product.sbinPath }} -c '{{ product.confPath }}'" start()
-stopCommand "{{ product.sbinPath }} -c '{{ product.confPath }}' -s stop" stop()
+startCommand "${ product.sbinPath } -c '${ product.confPath }'" start()
+stopCommand "${ product.sbinPath } -c '${ product.confPath }' -s stop" stop()
 
 modules {
     file_aio true
